@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  /* background-color: rgb(41 44 51); */
+  background-color: rgba(0, 0, 0, 0.709);
+}
+
+@font-face {
+  font-family: jost-black;
+  src: url(./assets/fonts/Jost-Regular.ttf);
+
+}
+@font-face {
+  font-family: jost-regular;
+  src: url(./assets/fonts/Jost-Regular.ttf);
+
+}
+@font-face {
+  font-family: jost-Italic;
+  src: url(./assets/fonts/Jost-Italic.ttf);
+
+}
+
+body {
+  @apply bg-white text-black transition-colors duration-300;
+}
+
+.dark body {
+  /* @apply bg-black text-white; */
+  @apply bg-darkbg text-white;
+}
