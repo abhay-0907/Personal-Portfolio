@@ -11,17 +11,23 @@ import ContactUs from "./components/ContactUs/ContactUs"
 
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+const [darkMode, setDarkMode] = useState(() => {
+    // Check localStorage for saved theme
+    const storedMode = localStorage.getItem("darkMode");
+    return storedMode === "true" ? true : false;
+  });
 
+  // Save preference to localStorage whenever it changes
   useEffect(() => {
+    localStorage.setItem("darkMode", darkMode);
     if (darkMode) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
-  return (
-    <>
+    
+  return (<>
   
     <div className="w-full  h-auto  font-[jost-regular] overflow-x-hidden bg-white text-black dark:bg-darkbg dark:text-white transition duration-300">
             <SideLinkSection/>
